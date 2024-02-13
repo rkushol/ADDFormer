@@ -2,7 +2,7 @@
 Alzheimer's Disease Detection from structural MRI using Fusion Transformer.
 
 The paper has been published in the Conference of ISBI 2022.
-Link: [https://doi.org/10.3390/diagnostics13182947](https://ieeexplore.ieee.org/iel7/9761376/9761399/09761421.pdf).
+Link: (https://ieeexplore.ieee.org/iel7/9761376/9761399/09761421.pdf).
 
 ```
 @inproceedings{kushol2022addformer,
