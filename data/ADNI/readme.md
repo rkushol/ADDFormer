@@ -1,5 +1,5 @@
 ## Folder structure
-Keep your MRI data (.nii files) according to the following structure. 
+Keep your MRI data (.nii files) inside `train/test/valid` folders according to the following structure. 
 
 data  
 ├── ADNI    
