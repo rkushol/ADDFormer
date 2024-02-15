@@ -9,4 +9,10 @@ data
 ├  ├── CN_train   
 ├  ├── CN_test   
 ├  ├── CN_valid   
+├  ├── AD_train_2D   
+├  ├── AD_test_2D    
+├  ├── AD_valid_2D   
+├  ├── CN_train_2D   
+├  ├── CN_test_2D   
+├  ├── CN_valid_2D   
 
