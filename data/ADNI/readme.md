@@ -1,5 +1,5 @@
 ## Folder structure
-Keep your MRI files here. 
+Keep your MRI data (.nii files) according to the following structure. 
 
 data  
 ├── ADNI    
