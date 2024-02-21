@@ -21,9 +21,10 @@ if __name__ == "__main__":
                     fdata = data.get_fdata()               
                     
                     for slice_number in range(112,127):                   
-                        new_filename= "third_"+str(slice_number)+"_"+filename
-                        #print(new_filename)
-                        fdata_2D = fdata[:, :, slice_number].astype(np.float32)
+                        new_filename= "third_"+str(slice_number)+"_"+filename     #For FreeSurfer reconstructed image
+                        fdata_2D = fdata[:, :, slice_number].astype(np.float32)   #For FreeSurfer reconstructed image
+                        #new_filename= "second_"+str(slice_number)+"_"+filename   #For MNI registered image
+                        #fdata_2D = fdata[:, slice_number, :].astype(np.float32)  #For MNI registered image
                         #print("fdata_2D: ", fdata_2D.shape)
                         #print("fdata_2D: ", fdata_2D.dtype)
 
