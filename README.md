@@ -1,5 +1,5 @@
 # ADDFormer
-Alzheimer's Disease Detection from structural MRI using Fusion Transformer.
+Alzheimer's Disease Detection from structural MRI using Fusion Transformer
 
 The paper has been published in the Conference of ISBI 2022.
 Link: (https://ieeexplore.ieee.org/iel7/9761376/9761399/09761421.pdf).
@@ -51,25 +51,47 @@ scikit-image
 ## Datasets
 ADNI dataset can be downloaded from [ADNI](http://adni.loni.usc.edu/) (Alzheimer’s Disease Neuroimaging Initiative)
 
+CALSNIC dataset can be requested from [CALSNIC](https://calsnic.org/) (Canadian ALS Neuroimaging Consortium)
+
 
 ## Preprocessing
 ### Skull stripping using Freesurfer
 Command ``recon-all -subjid subjid -i inputfile.nii -autorecon1``
 
-Details can be found at https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all
+Details can be found at https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all. After skull-stripping, the image dimension will be $256\times256\times256$ and the voxel dimension will be $1\times1\times1$ $mm^3$.
 
+### (Optional) Registration to MNI-152 using FSL
+Details can be found [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT)
 
+One implementation can be found [here](https://github.com/vkola-lab/brain2020/tree/master/Data_Preprocess). After registration, the image dimension will be $182\times218\times182$ and the voxel dimension will be $1\times1\times1$ $mm^3$.
 
 ## Training
-Run `python train.py` to train the network.
+Run `python addformer_train.py` to train the ADDFormer framework. Run `python sf2former_train.py` to train the SF2Former framework. It will generate `best_model.pth` in `model` folder.
 
 ## Testing
-Run `python test.py`.
+Run `python test3D_addformer.py` to test the `best model` using ADDFormer framework. Run `python test3D_sf2former.py` to test the `best model` using SF2Former framework.
 
 ## Contact
 Email at: kushol@ualberta.ca
 
 ## Acknowledgement
 This basic structure of the code relies on the project of [TransUNet](https://github.com/Beckschen/TransUNet)
-
+```
+@article{chen2021transunet,
+  title={Transunet: Transformers make strong encoders for medical image segmentation},
+  author={Chen, Jieneng and Lu, Yongyi and Yu, Qihang and Luo, Xiangde and Adeli, Ehsan and Wang, Yan and Lu, Le and Yuille, Alan L and Zhou, Yuyin},
+  journal={arXiv preprint arXiv:2102.04306},
+  year={2021}
+}
+```
 [GFNet](https://github.com/raoyongming/GFNet)
+```
+@article{rao2021global,
+  title={Global filter networks for image classification},
+  author={Rao, Yongming and Zhao, Wenliang and Zhu, Zheng and Lu, Jiwen and Zhou, Jie},
+  journal={Advances in neural information processing systems},
+  volume={34},
+  pages={980--993},
+  year={2021}
+}
+```
